@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'practice';
+  value: any = ''
+  temporary: any
+
+  action(act: any) {
+    this.value += act
+  }
+
+  clearAll() {
+    this.value = ''
+  }
+
+  delLast() {
+    this.temporary = this.value.slice(0, -1)
+    this.value = this.temporary
+  }
+
+  getResult() {
+    this.value = eval(this.value)
+  }
+
 }
